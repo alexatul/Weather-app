@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-app {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-overlay);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 50rem;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.weather-app .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+  padding: 1.25rem;
+  background-color: rgba(32, 30, 30, 0.627);
+}
+
+.weather-app .navbar .search-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.weather-app .navbar .search-bar input {
+  font-size: 0.9rem;
+  height: 2rem;
+  padding: 0.3rem;
+  border-top-right-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+  border: 1px solid var(--primary-color);
+  background-color: rgba(40, 112, 154, 0.14);
+  color: var(--primary-color);
+}
+
+.weather-app .navbar .search-bar input::placeholder {
+  margin-left: 0.625rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+section {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: white;
+}
+
+.container-temperature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  /* background-color: var(--section-overlay); */
+}
+
+.search-bar > input {
+  border: 1px solid white;
+  /* border-radius: 0.4rem; */
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.search-bar > input:focus {
+  outline: none;
+}
+
+.search-bar > button {
+  margin-left: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  background-color: rgba(40, 112, 154, 0.14);
+}
+
+.search-bar > button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgba(32, 30, 30, 0.627);
+  padding: 1rem;
+  border-radius: 0.4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.icon > h3 {
+  font-weight: 200;
+  text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.temperature > h1 {
+  font-size: 3.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  .weather-app .navbar {
+    flex-direction: column;
+    height: 6.3rem;
+    padding: 0.6rem;
   }
 }
